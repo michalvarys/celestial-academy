@@ -9,10 +9,3 @@ export const ENV =
 export const BASE_URL =
   process.env.URL || import.meta.env.URL || "http://localhost:4321";
 export const BASE = process.env.BASE || import.meta.env.BASE || "";
-
-console.log(
-  process.env.URL,
-  import.meta.env.URL,
-  process.env.BASE,
-  import.meta.env.BASE
-);

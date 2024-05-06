@@ -5,21 +5,18 @@ import FormattedDate from "../../components/FormattedDate.astro";
 import PageLayout from "../../layouts/PageLayout.astro";
 import BlogCard from "../../sections/blog/BlogCard.astro";
 import { getLink } from "../../utils";
+import PageTitle from "../../components/PageTitle.astro";
 
 const posts = (await getCollection("blog")).sort(
   (a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
 );
 ---
 
-<PageLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+<PageLayout title="Blog" description={SITE_DESCRIPTION}>
   <section
-    class="max-w-screen-2xl mx-auto px-5 md:px-12 xl:px-24 w-full text-whitee space-y-10 xl:space-y-20 xl:mb-20"
+    class="max-w-screen-2xl mx-auto px-5 md:px-12 xl:px-24 w-full text-whitee space-y-5 md:space-y-10 xl:space-y-20 xl:mb-20"
   >
-    <h1
-      class="text-center text-whitee font-Cormorant text-[85px] font-bold leading-[75px] pt-[37px]"
-    >
-      Blog
-    </h1>
+    <PageTitle> Blog </PageTitle>
     <div
       class="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
     >

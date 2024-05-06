@@ -10,10 +10,11 @@ interface Props {
 }
 
 const {
-  title,
+  title: titleRaw,
   description,
   image = getLink("/blog-placeholder-1.jpg"),
 } = Astro.props;
+const title = `Celestial Academy ${titleRaw ? "| " + titleRaw : ""}`;
 ---
 
 <!-- Global Metadata -->
