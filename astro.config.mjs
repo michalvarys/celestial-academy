@@ -6,6 +6,7 @@ import react from "@astrojs/react";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "http://localhost:4321",
+  site: 'https://michalvarys.github.io',
+  base: 'celestial-academy',
   integrations: [mdx(), sitemap(), tailwind(), react()]
 });
