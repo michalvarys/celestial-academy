@@ -10,10 +10,6 @@ const { title, description, className, footerProps } = Astro.props;
 <html lang="en">
   <head>
     <BaseHead title={title} description={description} />
-    <script
-      is:inline
-      src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.js"
-    ></script>
   </head>
 
   <body class="bg-blackee relative max-w-[100vw]">
@@ -35,5 +31,9 @@ const { title, description, className, footerProps } = Astro.props;
     </main>
 
     <Footer {...footerProps} />
+    <script
+      is:inline
+      src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.js"
+    ></script>
   </body>
 </html>

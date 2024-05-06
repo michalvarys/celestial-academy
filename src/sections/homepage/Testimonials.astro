@@ -1,21 +1,179 @@
 ---
 import SectionTitle from "../../components/SectionTitle.astro";
+const testimonials = [
+  {
+    name: "Cathi",
+    text: `Thank you for the reading, James. It was very thorough and quite relevant to my specific questions. :) Very Enlightening !`,
+    role: "",
+  },
+  {
+    name: "Matt",
+    text: `I’m pretty into this stuff myself and was honestly shocked at some of the insights and general accuracy of my reading. Even super specific advice about finances was very accurate and particularly good advice and applies to my life`,
+    role: "",
+  },
+  {
+    name: "Wild Feminine",
+    text: `Thank you for the exceptionally detailed reading.  He is well informed in astrology and numerology with easy to follow explanations. Highly recommend if you want to expand your knowledge.`,
+  },
+  {
+    name: "Titch Nethercot",
+    text: `Thank you for your reading. I have to say, it was totally accurate and astounding. You answered my questions clearly and concisely when i didnt understand.  Your knowledge of this area is vast. Using vedic charts and planetary postions/transitions and numerology `,
+  },
+];
 ---
 
 <section class="px-5">
   <SectionTitle>Testimonials</SectionTitle>
-  <div class="max-w-screen-2xl mx-auto space-y-5">
-    <p
-      class="text-whitee font-Cormorant text-2xl md:text-5xl lg:text-6xl font-bold lg:leading-tight font-bold"
+  <div
+    id="testimonial-carousel"
+    class="relative w-full mt-5"
+    data-carousel="static"
+  >
+    <div
+      class="relative overflow-hidden max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-3xl mx-auto rounded-lg w-full h-[200px] lg:h-[400px] xl:h-[300px]"
     >
-      Dolores nobis aut consequatur excepturi nam dicta. Eos sit esse omnis ut.
-      Quo ea eaque cupiditate officiis et provident iste. Voluptas eum iste
-      ipsam eveniet impedit et recusandae quod.
-    </p>
-    <p
-      class="text-whitee font-Montserrat text-xl md:text-2xl lg:text-3xl font-bold ng-tight font-normal"
+      <!-- Carousel wrapper -->
+      {
+        testimonials.map(({ name, text, role }, index) => (
+          <div
+            class="hidden space-y-5  px-4"
+            aria-current={!index ? "true" : false}
+            id={`carousel-item-${index}`}
+          >
+            <p class="text-whitee font-Cormorant text-2xl md:text-3xl lg:text-5xl font-bold lg:leading-tight font-bold">
+              {text}
+            </p>
+            <p class="text-lightyellow font-Montserrat text-xl md:text-2xl lg:text-3xl font-bold ng-tight font-normal">
+              - {name} {role && `; ${role}`}
+            </p>
+          </div>
+        ))
+      }
+    </div>
+    <!-- Slider indicators -->
+    <div
+      class="absolute bottom-5 left-1/2 z-30 flex -translate-x-1/2 space-x-3 rtl:space-x-reverse"
     >
-      Sarah M. - Celestial Member
-    </p>
+      {
+        testimonials.map(({ name }, index) => (
+          <button
+            type="button"
+            class="h-3 w-3 rounded-full"
+            aria-current={!index ? "true" : "false"}
+            aria-label={name}
+            id={`carousel-indicator-${index}`}
+          />
+        ))
+      }
+    </div>
+    <!-- Slider controls -->
+    <button
+      type="button"
+      class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+      data-carousel-prev
+    >
+      <span
+        class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none"
+      >
+        <svg
+          class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 6 10"
+        >
+          <path
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M5 1 1 5l4 4"></path>
+        </svg>
+        <span class="sr-only">Previous</span>
+      </span>
+    </button>
+    <button
+      type="button"
+      class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+      data-carousel-next
+    >
+      <span
+        class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none"
+      >
+        <svg
+          class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 6 10"
+        >
+          <path
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="m1 9 4-4-4-4"></path>
+        </svg>
+        <span class="sr-only">Next</span>
+      </span>
+    </button>
   </div>
 </section>
+<script define:vars={{ testimonials }}>
+  window.testimonials = testimonials;
+</script>
+<script>
+  import { Carousel } from "flowbite";
+  // @ts-ignore
+  const testimonials = window.testimonials;
+
+  const items = testimonials.map((_, position) => ({
+    position,
+    el: document.getElementById(`carousel-item-${position}`),
+  }));
+
+  // options with default values
+  const options = {
+    defaultPosition: 1,
+    interval: 8000,
+
+    indicators: {
+      activeClasses: "bg-white",
+      inactiveClasses: "bg-white/50 hover:bg-white",
+      items: testimonials.map((_, position) => ({
+        position,
+        el: document.getElementById(`carousel-indicator-${position}`),
+      })),
+    },
+
+    // callback functions
+    onNext: () => {
+      console.log("next slider item is shown");
+    },
+    onPrev: () => {
+      console.log("previous slider item is shown");
+    },
+    onChange: () => {
+      console.log("new slider item has been shown");
+    },
+  };
+
+  // instance options object
+  const instanceOptions = {
+    id: "testimonial-carousel",
+    override: true,
+  };
+
+  const el = document.getElementById("testimonial-carousel");
+  const carousel = new Carousel(el, items, options, instanceOptions);
+  carousel.cycle();
+
+  const prev = document.querySelector("[data-carousel-prev]");
+  const next = document.querySelector("[data-carousel-next]");
+  prev.addEventListener("click", () => {
+    carousel.prev();
+  });
+  next.addEventListener("click", () => {
+    carousel.next();
+  });
+</script>
