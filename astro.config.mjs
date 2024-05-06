@@ -9,5 +9,6 @@ import { BASE, BASE_URL } from "./src/consts";
 export default defineConfig({
   site: BASE_URL,
   base: BASE,
+
   integrations: [mdx(), sitemap(), tailwind(), react()]
 });
