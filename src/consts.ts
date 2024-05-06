@@ -5,5 +5,5 @@ export const SITE_TITLE = "Discover your Life Path";
 export const SITE_DESCRIPTION = "Welcome to my website!";
 
 export const ENV = process.env.NODE_ENV || "development";
-export const BASE_URL = process.env.URL || "http://localhost:3000";
+export const BASE_URL = process.env.URL || "http://localhost:4321";
 export const BASE = process.env.BASE || "";
