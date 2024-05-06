@@ -2,12 +2,10 @@ import { defineConfig } from "astro/config";
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 import tailwind from "@astrojs/tailwind";
-import { BASE, BASE_URL } from "./src/consts";
 
 // https://astro.build/config
 export default defineConfig({
-  site: BASE_URL,
-  base: BASE,
+  site: "http://localhost:4321",
 
-  integrations: [mdx(), sitemap(), tailwind()]
+  integrations: [mdx(), sitemap(), tailwind()],
 });
