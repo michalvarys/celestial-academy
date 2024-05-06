@@ -4,6 +4,6 @@
 export const SITE_TITLE = "Discover your Life Path";
 export const SITE_DESCRIPTION = "Welcome to my website!";
 
-export const ENV = process.env.NODE_ENV || "development";
-export const BASE_URL = process.env.URL || "http://localhost:4321";
-export const BASE = process.env.BASE || "";
+export const ENV = import.meta.env.NODE_ENV || "development";
+export const BASE_URL = import.meta.env.URL || "http://localhost:4321";
+export const BASE = import.meta.env.BASE || "";
