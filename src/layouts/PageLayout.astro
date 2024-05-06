@@ -14,18 +14,16 @@ const { title, description, className, footerProps } = Astro.props;
 
   <body class="bg-blackee relative max-w-[100vw]">
     <div
-      class="bg-blackee fixed top-0 left-0 right-0 justify-center max-w-[100vw] w-full z-[99] h-[70px] md:h-[100px]"
+      class="bg-blackee fixed top-0 left-0 right-0 flex items-center justify-center max-w-[100vw] w-full z-[99] h-[100px] md:h-[100px]"
     >
-      <header
-        class="my-3 max-w-full md:max-w-screen-4xl justify-center mx-auto"
-      >
+      <header class="max-w-full w-full md:max-w-screen-4xl mx-auto">
         <Navigation />
       </header>
     </div>
 
     <main
       class:list={[className]}
-      class="relative mt-[70px] md:mt-[100px] max-w-screen-4xl mx-[auto] min-h-[46vh]"
+      class="relative mt-[100px] max-w-screen-4xl mx-[auto] min-h-[46vh]"
     >
       <slot />
     </main>
