@@ -1,0 +1,72 @@
+---
+const { title, subtitle, description, price, popular, note } = Astro.props;
+---
+
+<div
+  class:list={[
+    {
+      "bg-[url('../images/Gradient.png')] bg-no-repeat bg-center relative":
+        popular,
+    },
+    "relative border-[2px] border-supcream rounded-[35px] pt-5 pb-2 px-2 md:px-8 md:pt-20 xl:pb-8 text-center space-y-2 max-w-lg mx-auto w-full",
+  ]}
+>
+  <h3
+    class="text-whitee font-Cormorant text-3xl md:text-4xl lg:text-5xl font-bold"
+  >
+    {title}
+  </h3>
+  <p
+    class="text-lightyellow font-Montserrat text-xl md:text-2xl lg:text-[22px] font-semibold leading-[28px]"
+  >
+    {subtitle}
+  </p>
+  <p
+    class="pt-[70px] md:pt-[100px] text-whitee font-Montserrat text-xl font-medium"
+  >
+    {description}
+  </p>
+
+  <div class="mx-[50px] w-[100%] h-[180px] md:h-[200px]"></div>
+  <div
+    class="absolute bottom-[10px] left-0 right-0 flex align-center justify-center"
+  >
+    <div class="">
+      <p
+        class="text-lightyellow font-Cormorant text-[64px] italic font-bold pb-[10px]"
+      >
+        {price}
+      </p>
+
+      {
+        note && (
+          <span class="text-whitee font-Montserrat text-sm font-medium">
+            {note}
+            <br />
+          </span>
+        )
+      }
+
+      <button
+        onclick="window.location.href = '/services'"
+        class="hover:text-blackee w-[145px] h-[54px] hover:bg-lightyellow text-lightyellow font-Montserrat text-xl font-medium border-[2px] border-lightyellow rounded-[10px]"
+        >Book Now</button
+      >
+    </div>
+  </div>
+
+  {
+    popular && (
+      <div class="absolute top-[-12px] right-8 md:right-[55px]">
+        <img
+          src="images/Rectangle.svg"
+          alt="Rectangle"
+          class="w-[100px] md:w-[200px]"
+        />
+        <p class="text-blackee text-md md:text-[24px] font-Cormorant font-bold mt-[-35px] md:mt-[-58px]">
+          Popular
+        </p>
+      </div>
+    )
+  }
+</div>

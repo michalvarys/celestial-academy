@@ -1,0 +1,32 @@
+---
+import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
+import { getCollection } from "astro:content";
+import FormattedDate from "../../components/FormattedDate.astro";
+import PageLayout from "../../layouts/PageLayout.astro";
+import BlogCard from "../../sections/blog/BlogCard.astro";
+
+const posts = (await getCollection("blog")).sort(
+  (a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
+);
+---
+
+<PageLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+  <section
+    class="max-w-screen-2xl mx-auto px-6 md:px-6 xl:px-0 w-full text-whitee space-y-10 xl:space-y-20 xl:mb-20"
+  >
+    <h1
+      class="text-center text-whitee font-Cormorant text-[85px] font-bold leading-[75px] pt-[37px]"
+    >
+      Blog
+    </h1>
+    <div
+      class="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
+    >
+      {
+        posts.map((post) => (
+          <BlogCard {...post.data} url={`/blog/${post.slug}/`} />
+        ))
+      }
+    </div>
+  </section>
+</PageLayout>

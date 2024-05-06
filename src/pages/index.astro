@@ -1,0 +1,21 @@
+---
+import ServiceCard from "../components/ServiceCard.astro";
+import PageLayout from "../layouts/PageLayout.astro";
+import Testimonials from "../sections/homepage/Testimonials.astro";
+import About from "../sections/homepage/About.astro";
+import Hero from "../sections/homepage/Hero.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import Services from "../sections/homepage/Services.astro";
+---
+
+<PageLayout
+  title={SITE_TITLE}
+  description={SITE_DESCRIPTION}
+  className="space-y-10 lg:space-y-32"
+  footerProps={{ className: "lg:mt-20" }}
+>
+  <Hero />
+  <About />
+  <Services />
+  <Testimonials />
+</PageLayout>

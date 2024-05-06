@@ -1,0 +1,39 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Navigation from "../components/Navigation.astro";
+import Footer from "../components/Footer.astro";
+
+const { title, description, className, footerProps } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={title} description={description} />
+    <script
+      is:inline
+      src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.js"
+    ></script>
+  </head>
+
+  <body class="bg-blackee relative max-w-[100vw]">
+    <div
+      class="bg-blackee fixed top-0 left-0 right-0 justify-center max-w-[100vw] w-full z-[99] h-[70px] md:h-[100px]"
+    >
+      <header
+        class="my-3 max-w-full md:max-w-screen-4xl justify-center mx-auto"
+      >
+        <Navigation />
+      </header>
+    </div>
+
+    <main
+      class:list={[className]}
+      class="relative mt-[70px] md:mt-[100px] max-w-screen-4xl mx-[auto] min-h-[46vh]"
+    >
+      <slot />
+    </main>
+
+    <Footer {...footerProps} />
+  </body>
+</html>

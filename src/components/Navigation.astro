@@ -1,0 +1,100 @@
+---
+import HeaderLink from "./HeaderLink.astro";
+
+const navItems = [
+  {
+    name: "Home",
+    href: "/",
+  },
+  {
+    name: "Blog",
+    href: "/blog",
+  },
+  {
+    name: "Services",
+    href: "/services",
+  },
+  {
+    name: "About",
+    href: "/about",
+  },
+];
+---
+
+<nav class="w-full px-5 md:px-12 justify-center items-center">
+  <div class="w-full flex flex-wrap items-center justify-between h-full">
+    <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
+      <img
+        src="/images/celestialogo.png"
+        alt="celestialogo"
+        class="max-w-[70%] w-[200px] lg:w-[300px]"
+      />
+    </a>
+
+    <button
+      data-collapse-toggle="navbar-default"
+      type="button"
+      class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden"
+      aria-controls="navbar-default"
+      aria-expanded="false"
+    >
+      <span class="sr-only">Open main menu</span>
+      <svg
+        class="w-5 h-5"
+        aria-hidden="true"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 17 14"
+      >
+        <path
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M1 1h15M1 7h15M1 13h15"></path>
+      </svg>
+    </button>
+
+    <div
+      class="hidden w-full md:block md:w-auto absolute top-0 left-0 right-0 md:relative"
+      id="navbar-default"
+    >
+      <ul
+        class="p-5 font-medium flex flex-col md:p-0 rounded-lg md:flex-row md:space-x-8 lg:space-x-20 rtl:space-x-reverse md:mt-0 bg-blackee"
+      >
+        {
+          navItems.map((item) => (
+            <li>
+              <HeaderLink href={item.href}>{item.name}</HeaderLink>
+            </li>
+          ))
+        }
+      </ul>
+
+      <button
+        data-collapse-toggle="navbar-default"
+        type="button"
+        class="absolute top-0 right-0 text-white inline-flex items-center p-2 w-10 h-10 justify-center text-sm rounded-lg md:hidden"
+        aria-controls="navbar-default"
+        aria-expanded="true">X</button
+      >
+    </div>
+  </div>
+</nav>
+
+<script>
+  import { Modal } from "flowbite";
+
+  // select the two elements that we'll work with
+  const $buttonElement: HTMLElement | null = document.querySelector("#button");
+  const $modalElement: HTMLElement | null =
+    document.querySelector("#defaultModal");
+
+  // create a new modal component
+  const modal = new Modal($modalElement);
+
+  // toggle the visibility of the modal when clicking on the button
+  if ($buttonElement) {
+    $buttonElement.addEventListener("click", () => modal.toggle());
+  }
+</script>

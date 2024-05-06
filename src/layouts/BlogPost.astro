@@ -1,0 +1,83 @@
+---
+import type { CollectionEntry } from "astro:content";
+import FormattedDate from "../components/FormattedDate.astro";
+import PageLayout from "./PageLayout.astro";
+type Props = CollectionEntry<"blog">["data"];
+
+const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+---
+
+<PageLayout title={title} description={description}>
+  <style>
+    main {
+      width: calc(100% - 2em);
+      max-width: 100%;
+      margin: 0;
+    }
+    .hero-image {
+      width: 100%;
+    }
+    .hero-image img {
+      display: block;
+      margin: 0 auto;
+      box-shadow: var(--box-shadow);
+    }
+    .prose {
+    }
+    .title {
+      margin-bottom: 1em;
+      padding: 1em 0;
+      text-align: center;
+      line-height: 1;
+    }
+    .title h1 {
+      margin: 0 0 0.5em 0;
+    }
+    .date {
+      margin-bottom: 0.5em;
+      color: rgb(var(--gray));
+    }
+    .last-updated-on {
+      font-style: italic;
+    }
+  </style>
+
+  <section class="max-w-screen-4xl">
+    <article class="w-full flex flex-col items-center justify-center">
+      <div class="hero-image">
+        {
+          heroImage && (
+            <img
+              width={1020}
+              height={510}
+              src={heroImage}
+              alt=""
+              class="lg:rounded-lg"
+            />
+          )
+        }
+      </div>
+
+      <div class="w-full !max-w-screen-lg prose !text-white">
+        <div class="title mt-5">
+          <div class="date">
+            <FormattedDate date={pubDate} />
+            {
+              updatedDate && (
+                <div class="last-updated-on">
+                  Last updated on <FormattedDate date={updatedDate} />
+                </div>
+              )
+            }
+          </div>
+          <h1 class="!text-indigo-200 px-4 md:px-0">{title}</h1>
+          <hr />
+        </div>
+
+        <div class="px-8">
+          <slot />
+        </div>
+      </div>
+    </article>
+  </section>
+</PageLayout>

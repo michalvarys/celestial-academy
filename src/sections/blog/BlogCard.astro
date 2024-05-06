@@ -1,0 +1,53 @@
+---
+import FormattedDate from "../../components/FormattedDate.astro";
+
+const { title, description, heroImage, url, pubDate } = Astro.props;
+---
+
+<div
+  class="relative max-w-sm mx-auto w-full border border-gray-200 rounded-lg shadow bg-indigo-950 border-gray-700 font-Montserrat hover:shadow-xl"
+>
+  {
+    heroImage && (
+      <a href={url}>
+        <img class="rounded-t-lg" src={heroImage} alt={title} />
+      </a>
+    )
+  }
+
+  <div class="p-5">
+    <a href={url}>
+      <h5 class="mb-2 text-2xl font-bold tracking-tight text-white">
+        {title}
+      </h5>
+    </a>
+    <p class="mb-3 font-normal text-indigo-400">
+      {description}
+    </p>
+    <div class="w-full text-xs text-whitee">
+      <FormattedDate date={pubDate} />
+    </div>
+
+    <div class="h-10 w-full"></div>
+    <a
+      href={url}
+      class="absolute bottom-2 right-2 inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-indigo-700 rounded-lg focus:outline-none focus:ring-indigo-300 bg-indigo-600 hover:bg-indigo-700 focus:ring-indigo-800"
+    >
+      Read more
+      <svg
+        class="rtl:rotate-180 w-3.5 h-3.5 ms-2"
+        aria-hidden="true"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 14 10"
+      >
+        <path
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M1 5h12m0 0L9 1m4 4L9 9"></path>
+      </svg>
+    </a>
+  </div>
+</div>
