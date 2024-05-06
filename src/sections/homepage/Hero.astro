@@ -1,6 +1,10 @@
+---
+import { getLink } from "../../utils";
+---
+
 <section class="w-full mx-auto">
   <div class="relative">
-    <img src="images/bgimage.png" alt="bgimage" />
+    <img src={getLink("images/bgimage.png")} alt="bgimage" />
     <div
       class="absolute top-0 left-0 bottom-0 right-0 flex flex-col items-center justify-center"
     >
@@ -11,12 +15,12 @@
       </h2>
       <div class="mt-4">
         <button
-          onclick="location.href= '/services'"
+          onclick={`location.href= '${getLink("/services")}'`}
           class="px-2 py-1 md:px-3 md:py-2 text-blackee hover:bg-transparent hover:text-lightyellow bg-lightyellow font-Montserrat text-sm md:text-xl font-medium border-[2px] border-lightyellow rounded-[10px]"
           >Book a Session</button
         >
         <button
-          onclick="location.href= '/blog'"
+          onclick={`location.href= '${getLink("/blog")}'`}
           class="px-2 py-1 md:px-3 md:py-2 text-lightyellow hover:bg-lightyellow hover:text-blackee font-Montserrat text-sm md:text-xl font-medium border-[2px] border-lightyellow rounded-[10px] ml-[25px]"
           >Check My Blog</button
         >
