@@ -1,4 +1,6 @@
 ---
+import { getLink } from "../utils";
+
 const { className } = Astro.props;
 const today = new Date();
 ---
@@ -27,7 +29,7 @@ const today = new Date();
         >
           <!-- <img src="/images/Facebook.svg" alt="Facebook" /> -->
           <a href="https://twitter.com/VeritasAeternii" target="_blank"
-            ><img src="/images/TwitterX.svg" alt="TwitterX" />
+            ><img src={getLink("/images/TwitterX.svg")} alt="TwitterX" />
           </a>
         </div>
         <div class="text-white mt-10">
@@ -88,22 +90,22 @@ const today = new Date();
           class="grid grid-cols-1 gap-1 text-md md:text-xl text-supcream lg:gap-5 font-Montserrat"
         >
           <li>
-            <a href="/services" class="hover:text-lightyellow"
+            <a href={getLink("/services")} class="hover:text-lightyellow"
               >Astrology Reading</a
             >
           </li>
           <li>
-            <a href="/services" class="hover:text-lightyellow"
+            <a href={getLink("/services")} class="hover:text-lightyellow"
               >Birthchart + Transits</a
             >
           </li>
           <li>
-            <a href="/services" class="hover:text-lightyellow"
+            <a href={getLink("/services")} class="hover:text-lightyellow"
               >Love compatibility</a
             >
           </li>
           <li>
-            <a href="/services" class="hover:text-lightyellow"
+            <a href={getLink("/services")} class="hover:text-lightyellow"
               >Financial Astrology</a
             >
           </li>

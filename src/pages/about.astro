@@ -1,6 +1,7 @@
 ---
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import PageLayout from "../layouts/PageLayout.astro";
+import { getLink } from "../utils";
 ---
 
 <PageLayout
@@ -15,7 +16,7 @@ import PageLayout from "../layouts/PageLayout.astro";
       >
         About
       </h1>
-      <img src="/images/about-banner.png" alt="bgimage" />
+      <img src={getLink("/images/about-banner.png")} alt="bgimage" />
 
       <h2
         class="text-whitee font-Cormorant text-3xl md:text-5xl font-bold leading-tight"
@@ -45,7 +46,7 @@ import PageLayout from "../layouts/PageLayout.astro";
             which I use in my practice.
           </p>
         </div>
-        <img src="/images/about-image.png" />
+        <img src={getLink("/images/about-image.png")} />
       </div>
     </div>
   </section>
