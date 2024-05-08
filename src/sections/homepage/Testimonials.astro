@@ -1,12 +1,9 @@
 ---
 import { getCollection } from "astro:content";
 import SectionTitle from "../../components/SectionTitle.astro";
-const data = await getCollection("homepage", (e)=> e.slug.startsWith('testimonials'))
-
-const testimonials = data.map(values => ({
-  name: values.data.name,
-  text: values.body,
-})) 
+import { getEntry } from "astro:content";
+const { data }= await getEntry("homepage", "testimonials")
+const { testimonials } = data 
 ---
 
 <section class="px-5">
@@ -21,14 +18,14 @@ const testimonials = data.map(values => ({
     >
       <!-- Carousel wrapper -->
       {
-        testimonials.map(({ name, text }, index) => (
+        testimonials.map(({ data: { name, message } }, index) => (
           <div
             class="hidden space-y-5  px-4"
             aria-current={!index ? "true" : false}
             id={`carousel-item-${index}`}
           >
             <p class="text-whitee font-Cormorant text-2xl md:text-3xl lg:text-5xl font-bold lg:leading-tight font-bold">
-              {text}
+              {message}
             </p>
             <p class="text-lightyellow font-Montserrat text-xl md:text-2xl lg:text-3xl font-bold ng-tight font-normal">
               - {name}

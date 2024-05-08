@@ -43,4 +43,45 @@ const about = defineCollection({
   }),
 });
 
-export const collections = { blog, homepage, services, about };
+const test = defineCollection({
+  type: "content",
+  schema: z.object({
+    services: z.array(
+      z.object({
+        title: z.string(),
+        subtitle: z.string(),
+        description: z.string(),
+        price: z.string(),
+        order: z.number(),
+        popular: z.boolean().optional(),
+        note: z.string().optional(),
+        link: z.string().optional(),
+      })
+    ),
+  }),
+});
+
+export const collections = {
+  blog,
+  homepage: {
+    services,
+    about: defineCollection({
+      type: "content",
+      schema: z.object({
+        before: z.string(),
+        after: z.string(),
+        skills: z.array(
+          z.object({
+            title: z.string(),
+            description: z.string(),
+            link: z.string().optional(),
+            order: z.number(),
+          })
+        ),
+      }),
+    }),
+  },
+  services,
+  about,
+  test,
+};

@@ -1,1 +1,0 @@
-As a highly intuitive Astrologer that combines Vedic and Western systems, I will help YOU discover the incredible wisdom the stars and planets hold; I will help you discover the Sun, Moon, and Stars

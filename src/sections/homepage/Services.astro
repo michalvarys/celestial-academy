@@ -1,21 +1,23 @@
 ---
-import { getCollection } from "astro:content";
 import SectionTitle from "../../components/SectionTitle.astro";
 import ServiceCard from "../../components/ServiceCard.astro";
-const data = await getCollection("services")
+import { getEntry } from "astro:content";
+
+const a = await getEntry("homepage", "services")
+const { services, title, description } = a.data
 
 ---
 
 <section class="px-5 md:px-12 xl:px-20 xl:px-0 space-y-10" id="services">
-  <SectionTitle>Services</SectionTitle>
+  <SectionTitle>{title}</SectionTitle>
   <h5
     class="text-whitee font-Cormorant text-4xl md:text-5xl lg:text-6xl leading-tight font-bold text-center"
   >
-    Check Out Your Options
+    {description}
   </h5>
 
   <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-10 md:gap-4">
-    {data
+    {services
     .sort((a, b) => a.data.order - b.data.order)
     .map(({ data })=> (
       <ServiceCard {...data} />

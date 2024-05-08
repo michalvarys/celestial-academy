@@ -32,12 +32,12 @@ const buttonSolid = {
       </h2>
       <div class="mt-4">
         <button
-          onclick={`location.href= '${buttonSolid.link.startsWith('http') ? buttonSolid.link : getLink(buttonSolid.link)}'`}
+          onclick={`location.href= '${buttonSolid.link}'`}
           class="px-2 py-1 md:px-3 md:py-2 text-blackee hover:bg-transparent hover:text-lightyellow bg-lightyellow font-Montserrat text-sm md:text-xl font-medium border-[2px] border-lightyellow rounded-[10px]"
           >{buttonSolid.text}</button
         >
         <button
-          onclick={`location.href= '${buttonOutline.link.startsWith('http') ? buttonOutline.link : getLink(buttonOutline.link)}'`}
+          onclick={`location.href= '${buttonOutline.link}'`}
           class="px-2 py-1 md:px-3 md:py-2 text-lightyellow hover:bg-lightyellow hover:text-blackee font-Montserrat text-sm md:text-xl font-medium border-[2px] border-lightyellow rounded-[10px] ml-[25px]"
           >{buttonOutline.text}</button
         >
