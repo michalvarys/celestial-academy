@@ -1,6 +1,9 @@
 ---
+import { getCollection } from "astro:content";
 import SectionTitle from "../../components/SectionTitle.astro";
 import ServiceCard from "../../components/ServiceCard.astro";
+const data = await getCollection("services")
+
 ---
 
 <section class="px-5 md:px-12 xl:px-20 xl:px-0 space-y-10" id="services">
@@ -12,34 +15,10 @@ import ServiceCard from "../../components/ServiceCard.astro";
   </h5>
 
   <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-10 md:gap-4">
-    <ServiceCard
-      title="Astrology reading"
-      subtitle="Birth Chart - 30 min Consult"
-      description="Unveil the wisdom behind your birth chart and discover what hidden aspects of your cosmic journey"
-      price="$65"
-    />
-
-    <ServiceCard
-      title="Transits"
-      subtitle="Birth Chart + Transits - 1 hr Consult"
-      description="Let’s explore your birth chart and transits together"
-      price="$105"
-      popular
-    />
-
-    <ServiceCard
-      title="Love Compatibility"
-      subtitle="Unveil Your Ideal Partner"
-      description="You will get a love compatibility between you and a partner. Need the birth day, birth time, and birth place of both partners"
-      price="$116"
-    />
-
-    <ServiceCard
-      title="Financial Astrology"
-      subtitle="Asset Stocks"
-      description="I will show you exactly when to buy a car, a house, invest in stock or start a business. I will tell you when to buy and when to sell."
-      price="$169"
-      note="Or billed $1.75 / minute"
-    />
+    {data
+    .sort((a, b) => a.data.order - b.data.order)
+    .map(({ data })=> (
+      <ServiceCard {...data} />
+    ))}
   </div>
 </section>

@@ -1,5 +1,5 @@
 ---
-const { title, subtitle, description, price, popular, note } = Astro.props;
+const { title, subtitle, description, price, popular, note, link } = Astro.props;
 ---
 
 <div
@@ -48,7 +48,7 @@ const { title, subtitle, description, price, popular, note } = Astro.props;
       }
 
       <button
-        onclick="window.location.href = '/services'"
+        onclick=`window.location.href = '${link || '/services'}'`
         class="hover:text-blackee w-[145px] h-[54px] hover:bg-lightyellow text-lightyellow font-Montserrat text-xl font-medium border-[2px] border-lightyellow rounded-[10px]"
         >Book Now</button
       >

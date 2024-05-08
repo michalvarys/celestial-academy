@@ -1,0 +1,1 @@
+Receive complimentary readings for your own chart along with lifetime support for any questions you may have, providing you with security and confidence towards the future. There's no need for you to book a new reading with me.

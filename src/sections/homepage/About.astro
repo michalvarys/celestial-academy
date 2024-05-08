@@ -1,7 +1,11 @@
 ---
 import { getLink } from "../../utils";
 import AboutCol from "./AboutCol.astro";
+import { getCollection, getEntry } from "astro:content";
 
+const before = await getEntry("homepage", "about/before")
+const after = await getEntry("homepage", "about/after")
+const offers = await getCollection("homepage", (e)=> e.slug.startsWith('about/offers/'))
 ---
 
 <section
@@ -9,34 +13,27 @@ import AboutCol from "./AboutCol.astro";
 >
   <h2
     class="text-whitee font-Cormorant text-2xl md:text-5xl lg:text-6xl font-bold leading-7 lg:leading-tight"
-  >
-    As a highly intuitive Astrologer that combines Vedic and Western systems, I
-    will help YOU discover the incredible wisdom the stars and planets hold; I
-    will help you discover the Sun, Moon, and Stars
-  </h2>
+    >
+    {before.body}
+    </h2>
 
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-    <AboutCol title="Kabbalah powered.">
-      I've studied the Zohar and I can relate these concepts between different planets to the Torah and the Tree of Life. I also am familiar with Hebrew and Aramaic.
-    </AboutCol>
-    <AboutCol title="I play Tarot.">
-      I am an Adept in the Western Mystery schools. I am trained in the esoteric Tarot, and I have studied Astrology in Hebrew, Chaldean, Hellenistic, and Vedic systems.
-    </AboutCol>
-    <AboutCol title="Lifetime Readings.">
-      I will give you lifetime readings. Most Astrologers won’t do a second reading for you but if you have any questions for me, even for emergencies, you are welcome to contact me anytime, without cost to you.
-    </AboutCol>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+      {offers.map(({ body, data }) => (
+        <AboutCol title={data.title}> 
+            {body}
+        </AboutCol>
+      ))}
+      
   </div>
 
   <!-- second div  -->
-  <p
+  <div
     class="text-supcream font-Cormorant text-2xl md:text-5xl lg:text-6xl font-bold leading-7 lg:leading-tight"
-  >
-    Receive complimentary readings for your own chart along with lifetime
-    support for any questions you may have, providing you with security and
-    confidence towards the future. There's no need for you to book a new reading
-    with me.
-  </p>
-
+    >
+    {after.body}
+  </div>
+  
   <div>
     <img src={getLink("/images/image2.png")} alt="image2" />
   </div>
