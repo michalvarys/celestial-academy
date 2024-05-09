@@ -3,13 +3,13 @@ import BaseHead from "../components/BaseHead.astro";
 import Navigation from "../components/Navigation.astro";
 import Footer from "../components/Footer.astro";
 
-const { title, description, className, footerProps } = Astro.props;
+const { title, description, keywords, className, footerProps } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
-    <BaseHead title={title} description={description} />
+    <BaseHead title={title} description={description} keywords={keywords} />
   </head>
 
   <body class="bg-blackee relative max-w-[100vw]">

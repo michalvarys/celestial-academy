@@ -5,6 +5,7 @@ import { getLink } from "../utils";
 
 interface Props {
   title: string;
+  keywords?: string;
   description: string;
   image?: string;
 }
@@ -12,6 +13,7 @@ interface Props {
 const {
   title: titleRaw,
   description,
+  keywords,
   image = getLink("/blog-placeholder-1.jpg"),
 } = Astro.props;
 const title = `Celestial Academy ${titleRaw ? "| " + titleRaw : ""}`;
@@ -30,6 +32,7 @@ const title = `Celestial Academy ${titleRaw ? "| " + titleRaw : ""}`;
 <title>{title}</title>
 <meta name="title" content={title} />
 <meta name="description" content={description} />
+{keywords && <meta name="keywords" content={keywords} />}
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website" />

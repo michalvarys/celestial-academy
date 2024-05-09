@@ -4,12 +4,15 @@ import Testimonials from "../sections/homepage/Testimonials.astro";
 import About from "../sections/homepage/About.astro";
 import Hero from "../sections/homepage/Hero.astro";
 import Services from "../sections/homepage/Services.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import { getEntry } from "astro:content";
+const { data } = await getEntry("homepage", "index");
+const { seoTitle, seoDescription, seoKeywords } = data;
 ---
 
 <PageLayout
-  title={SITE_TITLE}
-  description={SITE_DESCRIPTION}
+  title={seoTitle}
+  description={seoDescription}
+  keywords={seoKeywords}
   className="space-y-10 lg:space-y-32"
   footerProps={{ className: "lg:mt-20" }}
 >
