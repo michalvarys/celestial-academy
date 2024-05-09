@@ -1,6 +1,3 @@
-
-
-
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}",
@@ -32,6 +29,7 @@ module.exports = {
 
       "3xl": "1600px",
       // => @media (min-width: 1600px) { ... }
+      
       "4xl": "1920px",
       // => @media (min-width: 1920px) { ... }
     },
