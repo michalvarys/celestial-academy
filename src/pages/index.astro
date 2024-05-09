@@ -5,6 +5,7 @@ import About from "../sections/homepage/About.astro";
 import Hero from "../sections/homepage/Hero.astro";
 import Services from "../sections/homepage/Services.astro";
 import { getEntry } from "astro:content";
+
 const { data } = await getEntry("homepage", "index");
 const { seoTitle, seoDescription, seoKeywords } = data;
 ---
