@@ -3,7 +3,7 @@ seoTitle: About
 seoDescription: This is about me mf 
 title: About
 mainImage: "/images/about-banner.png"
-secondaryImage: "/images/about-image.png"
+secondaryImage: "/images/Cosmogenesis.jpg"
 description: "Discover the profound insights awaiting you as you consult with the world's leading Astrologer in both Vedic and Western systems. Unlock the key towards boundless wisdom encoded within the celestial bodies, as your journey guides you towards profound revelations."
 ---
 
