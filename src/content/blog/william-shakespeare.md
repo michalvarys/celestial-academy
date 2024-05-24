@@ -1,7 +1,7 @@
 ---
 title: "William Shakespeae's Astrology Chart"
 description: "We will discover William Shakespeare's birth chart"
-pubDate: 'Mar 16 2024'
+pubDate: 'May 16 2024'
 heroImage: 'https://pbs.twimg.com/media/GNWaRoSa4AARVFo?format=png&name=900x900'
 ---
 
@@ -20,3 +20,5 @@ Current Transits:
 Currently, Mr. Shakespeare has X in Gemini, meaning that his works are experiencing a newfound surge of interest, especially with the emergence of online tools and apps to read the Bible. this will be expected to last until 2037.
 
 Pluto, Lord of 8th House, currently in Capricorn as of 2024, gives him fame and controversy on his origins, and this transit will last until 2037.
+
+Picture: Carl McCoy of Field of the Nephilim
