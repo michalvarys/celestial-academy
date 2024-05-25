@@ -10,6 +10,7 @@ const blog = defineCollection({
     pubDate: z.coerce.date(),
     updatedDate: z.coerce.date().optional(),
     heroImage: z.string().optional(),
+    hidden: z.boolean().optional(),
   }),
 });
 
@@ -56,7 +57,7 @@ const test = defineCollection({
         popular: z.boolean().optional(),
         note: z.string().optional(),
         link: z.string().optional(),
-      })
+      }),
     ),
   }),
 });
@@ -76,7 +77,7 @@ export const collections = {
             description: z.string(),
             link: z.string().optional(),
             order: z.number(),
-          })
+          }),
         ),
       }),
     }),
