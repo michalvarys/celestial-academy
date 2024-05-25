@@ -3,6 +3,7 @@ title: "William Shakespeae's Astrology Chart"
 description: "We will discover William Shakespeare's birth chart"
 pubDate: 'May 16 2024'
 heroImage: 'https://pbs.twimg.com/media/GNWaRoSa4AARVFo?format=png&name=900x900'
+hidden: true
 ---
 
 I did a reading for William Shakespeare.

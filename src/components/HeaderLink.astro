@@ -14,20 +14,13 @@ const isActive = href === pathname || href === "/" + subpath?.[0];
   href={href}
   class:list={[
     className,
-    { active: isActive },
-    "text-whitee font-Montserrat text-xl md:text-lg font-normal uppercase hover:text-lightyellow",
+    {
+      "font-bold": isActive,
+      "font-normal": !isActive,
+    },
+    "text-whitee font-Montserrat text-xl md:text-lg uppercase hover:text-lightyellow",
   ]}
   {...props}
 >
   <slot />
 </a>
-<style>
-  a {
-    display: inline-block;
-    text-decoration: none;
-  }
-  a.active {
-    font-weight: bolder;
-    text-decoration: underline;
-  }
-</style>
