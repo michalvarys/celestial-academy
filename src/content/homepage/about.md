@@ -15,5 +15,5 @@ skills:
         description: "I will give you lifetime support for readings. Most Astrologers won’t do a second reading for you for the same service but if you have any questions for me on a specific reading you         have received, you are welcome to contact me anytime, without cost to you."
         order: 3
 
-after: "Receive complimentary support for your readings for any questions you may have, providing you with the confidence and security that you will be able to access your information.
+after: "Receive complimentary support for your readings for any questions you may have, providing you with the confidence and security that you will be able to access your information."
 ---
