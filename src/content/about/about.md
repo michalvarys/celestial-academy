@@ -11,4 +11,4 @@ My system, which benefits you, is called True Astrology™, it is a combination 
 
 Even with Uranus, Neptune, Pluto, a Natal chart won’t make sense, there are 3 additional planets I use called Planet X (Mithras), Planet Y (Hephaestus), and Planet Z (Lucifer), which are extremely powerful in determining your life path. I am an highly intuitive Astrologer with very precise readings.
 
-My teacher in Astrology was Greenstone Lobo, and he was taught by Linda Goodman. I’m familiar with Western, Vedic, and Chaldean systems, and you will also get the benefit of Hellenistic Astrology which I use in my practice.
+My teacher in Astrology was Greenstone Lobo, and he was taught by Linda Goodman. I’m familiar with Western, Vedic, and Chaldean systems, and you will also get the benefit of my knowledge of the esotirc used in conjunction with these systems. I've done readings for celebrities and people of all walks of life.
