@@ -12,7 +12,7 @@ skills:
         order:  2
     - data: 
         title: "Lifetime Support."
-        description: "I will give you lifetime support for my readings. Most Astrologers won’t do a second reading for you for the same service, but if you have any questions, you are welcome to contact          me anytime."
+        description: "I will give you lifetime support for my readings. Most Astrologers won’t do a second reading for you, but if you have any questions, you are welcome to contact me anytime."
         order:  3
 
 after: "Receive lifetime support for your own chart for any questions you may have, providing you with security and confidence towards the future. There's no need for you to book a new reading with me."
