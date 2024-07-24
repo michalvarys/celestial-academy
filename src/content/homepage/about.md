@@ -11,9 +11,9 @@ skills:
         description: "I am an Adept in the Western Mystery schools. I am trained in the esoteric Tarot, and I have studied Astrology in Hebrew, Chaldean, Hellenistic, and Vedic systems."
         order:  2
     - data: 
-        title: "Lifetime Readings."
-        description: "I will give you lifetime readings. Most Astrologers won’t do a second reading for you but if you have any questions for me, even for emergencies, you are welcome to contact me anytime, without cost to you."
+        title: "Lifetime Support."
+        description: "I will give you lifetime support for readings. Most Astrologers won’t do a second reading for you for the same service but if you have any questions for me on a reading you have             received, you are welcome to contact me anytime, without cost to you."
         order: 3
 
-after: "Receive complimentary readings for your own chart along with lifetime support for any questions you may have, providing you with security and confidence towards the future. There's no need for you to book a new reading with me."
+after: "Receive complimentary support for your readings for any questions you may have, providing you with the confidence and security that you will be able to access your information.
 ---
