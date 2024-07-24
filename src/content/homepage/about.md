@@ -12,8 +12,8 @@ skills:
         order:  2
     - data: 
         title: "Lifetime Support."
-        description: "I give you lifetime support for my readings. Most Astrologers won’t do a second reading for you for the same service, but if you have any questions, you are welcome to contact me            anytime, without cost to you."
+        description: "I provide lifetime support for my readings. Most Astrologers won’t do a second reading for you for the same service, but if you have any questions, you are welcome to contact me             anytime"
         order: 3
 
-after: "Receive complimentary support for your readings for any questions you may have, providing you with the confidence and security that you will be able to access your information."
+after: "Receive lifetime support for your readings for any questions you may have about a reading, providing you with confidence and security."
 ---
